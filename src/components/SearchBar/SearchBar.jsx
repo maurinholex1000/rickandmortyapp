@@ -36,11 +36,11 @@ class SearchBar extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        personajes: state.charactersLoaded
-    };
-}
+// function mapStateToProps(state) {
+//     return {
+//         personajes: state.charactersLoaded
+//     };
+// }
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -48,4 +48,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);

@@ -18,10 +18,16 @@ export function removeFavorite(payload) {
     }
 }
 
-export function getDetail(payload) {
-    return {
-        type: GET_DETAIL,
-        payload
+export function getDetail(id) {
+    return function(dispatch) {
+        return fetch(`https://rickandmortyapi.com/api/character/${id}`)
+            .then(resp => resp.json())
+            .then(json => {
+                dispatch({
+                    type: GET_DETAIL,
+                    payload: json
+                })
+            })
     }
 }
 
